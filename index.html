@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raven Bot - Control Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1e1e1e;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .invite-btn {
+            background-color: #7289da;
+            color: white;
+        }
+        .commands-btn {
+            background-color: #ffcc00;
+            color: black;
+        }
+        .commands-menu {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Raven Bot - Panel</h1>
+        <h2>Owner: Reskk</h2>
+        
+        <button class="invite-btn" onclick="inviteBot()">Invite Bot</button>
+        <button class="commands-btn" onclick="toggleCommands()">Vezi Comenzile</button>
+
+        <div class="commands-menu" id="commandsMenu">
+            <h3>Comenzi Disponibile:</h3>
+            <ul>
+                <li><b>!help</b> - Afișează lista comenzilor</li>
+                <li><b>!kick @user</b> - Dă kick unui utilizator</li>
+                <li><b>!ban @user</b> - Banează un utilizator</li>
+                <li><b>!ping</b> - Verifică latenta botului</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function inviteBot() {
+            window.location.href = "https://discord.com/oauth2/authorize?client_id=1335720203404972132&permissions=8&integration_type=0&scope=bot";
+        }
+
+        function toggleCommands() {
+            var menu = document.getElementById("commandsMenu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
